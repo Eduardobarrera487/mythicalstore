@@ -2,13 +2,16 @@ import React from 'react'
 
 function navbar() {
   return (
-    <div class="flex flex-wrap h-screen">
-      <section class="relative mx-ato">
-        <nav class="flex justify-between bg-zinc-950 text-white w-screen">
+    <>
+    <div class="bg-zinc-950 w-full items-center">
+        <a href=""><img src="https://s3-alpha-sig.figma.com/img/8d3e/4ba7/9d031e8959cb3fbd1cf0b0ef2487e648?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dRvGWj8~8uonO63QJ-WoXrMh7EzILouV1cAMcd56vH5mXzoteArBROr8Uqe7kdZGCbaUULngjmMBQEetR0dGDyM4DRwhY1VuSgKJjUqZwSpJZ1~WmN3p5xzxGViWE2NJMZ-z2RmlkvDDEQ~GuYsa959S9qJzHXZ7KWIDNnuMO~KAHWIJOWPN5nItCzvmUH9A8xEnisLo9M~hKex~~efLo5myjFu2iYYmoL2eBzQlrT7GnksWnhpRIQmSl25fc-I0toX~v6cZ7mSJtqmFndkhvJP-DwVEFimqfcGCt8vJL5XTn8n8godOoBhhUzDO~bCmcKdPC3FLJJw3qtoznzb7YQ__" alt="" width={100} height={50} class="mx-auto"/></a>
+      </div>
+    <div class="flex flex-wrap">
+      
+      <section class="relative mx-auto">
+        <nav class="flex justify-between bg-zinc-900 text-white w-screen">
+        
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a class="" href="#">
-              <img class="h-9" src="" alt="" />
-            </a>
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
@@ -60,6 +63,7 @@ function navbar() {
         </nav>
       </section>
     </div>
+    </>
   )
 }
 
