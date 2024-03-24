@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function navbar() {
   return (
@@ -13,8 +14,8 @@ function navbar() {
         
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
+              <li><Link class="hover:text-gray-200" href="/Contacto">Home</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Home</Link></li>
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
               <li><a class="hover:text-gray-200" href="#">Home</a></li>
