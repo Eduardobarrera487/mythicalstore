@@ -5,8 +5,8 @@ function Hero() {
 
 <div className="relative h-screen">
       <img
-        src="https://s3-alpha-sig.figma.com/img/c3c7/37a1/d7522aacb8b0377b184552e2f83b6652?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=TnEaJoOvz~ObVr2azWGdYPP0J9IJmi1T6St9S4O~cBRK~UIHWeet~oOwKZ6M4RGbU1FvFpfJRl2gw8dwihHc7v0RNvVtj2rXy5hScH9jvnxMI6Sy4H-hRLH06FVqSzbRc1l00HFvw9s7zguf~AVdvEgmo4NRcZb13fDlFLm2gllridQm9hGzWR6h3FsL4sPqgv5LnwamUkuGLtTg9x7C72BCaq53j6-mFv4F4fTkpcfHCaIA0RIf6zugdY-JNjV4EWDi9H2mXTst2ZAwWkL3h8c9ZEV5DOkNajlLUihPNDt2nQ2aSD9qZPp1-TeMEDAcZ7HzpmqlbHXrb7SlWGE61g__"
-        className="absolute inset-0 object-cover w-full h-full "
+        src="/mythicalHero.png"
+        className="absolute inset-0 object-cover w-full h-full"
         alt=""
       />
       <div className="relative bg-black bg-opacity-75 h-screen">
