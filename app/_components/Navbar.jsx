@@ -5,7 +5,9 @@ function navbar() {
   return (
     <>
     <div class="bg-zinc-950 w-full items-center">
+
         <a href=""><img src="/mythicalLogo.png" alt="" width={100} height={50} class="mx-auto"/></a>
+
       </div>
     <div class="flex flex-wrap">
       
@@ -20,6 +22,7 @@ function navbar() {
               <li><Link class="hover:text-gray-200" href="/pages/nosotros">Nosotros</Link></li>
               <li><Link class="hover:text-gray-200" href="#">Contacto</Link></li>
               <li><Link class="hover:text-gray-200" href="#">Noticias</Link></li>
+
 
             </ul>
             <div class="hidden xl:flex space-x-5 items-center">
