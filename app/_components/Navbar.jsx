@@ -5,7 +5,9 @@ function navbar() {
   return (
     <>
     <div class="bg-zinc-950 w-full items-center">
-        <a href=""><img src="/mythical blanco y negro 1_Mesa de trabajo 1.png" alt="" width={100} height={50} class="mx-auto"/></a>
+
+        <a href=""><img src="/mythicalLogo.png" alt="" width={100} height={50} class="mx-auto"/></a>
+
       </div>
     <div class="flex flex-wrap">
       
@@ -14,12 +16,14 @@ function navbar() {
         
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><Link class="hover:text-gray-200" href="/Home">Home</Link></li>
-              <li><Link class="hover:text-gray-200" href="#">Nosotros</Link></li>
-              <li><Link class="hover:text-gray-200" href="/Contacto">Contacto</Link></li>
-              <li><a class="hover:text-gray-200" href="#">Preguntas frecuentes</a></li>
-              <li><a class="hover:text-gray-200" href="#">Noticias</a></li>
-              <li><a class="hover:text-gray-200" href="#">Politicas</a></li>
+
+              <li><Link class="hover:text-gray-200" href="#">Inicio</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Catalogo</Link></li>
+              <li><Link class="hover:text-gray-200" href="/pages/nosotros">Nosotros</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Contacto</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Noticias</Link></li>
+
+
             </ul>
             <div class="hidden xl:flex space-x-5 items-center">
               <a class="hover:text-gray-200" href="#">
