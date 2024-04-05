@@ -5,7 +5,9 @@ function navbar() {
   return (
     <>
     <div class="bg-zinc-950 w-full items-center">
-        <a href=""><img src="https://s3-alpha-sig.figma.com/img/8d3e/4ba7/9d031e8959cb3fbd1cf0b0ef2487e648?Expires=1710720000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dRvGWj8~8uonO63QJ-WoXrMh7EzILouV1cAMcd56vH5mXzoteArBROr8Uqe7kdZGCbaUULngjmMBQEetR0dGDyM4DRwhY1VuSgKJjUqZwSpJZ1~WmN3p5xzxGViWE2NJMZ-z2RmlkvDDEQ~GuYsa959S9qJzHXZ7KWIDNnuMO~KAHWIJOWPN5nItCzvmUH9A8xEnisLo9M~hKex~~efLo5myjFu2iYYmoL2eBzQlrT7GnksWnhpRIQmSl25fc-I0toX~v6cZ7mSJtqmFndkhvJP-DwVEFimqfcGCt8vJL5XTn8n8godOoBhhUzDO~bCmcKdPC3FLJJw3qtoznzb7YQ__" alt="" width={100} height={50} class="mx-auto"/></a>
+
+        <a href=""><img src="/mythicalLogo.png" alt="" width={100} height={50} class="mx-auto"/></a>
+
       </div>
     <div class="flex flex-wrap">
       
@@ -14,12 +16,14 @@ function navbar() {
         
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><Link class="hover:text-gray-200" href="/Contacto">Home</Link></li>
-              <li><Link class="hover:text-gray-200" href="#">Home</Link></li>
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
-              <li><a class="hover:text-gray-200" href="#">Home</a></li>
+
+              <li><Link class="hover:text-gray-200" href="#">Inicio</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Catalogo</Link></li>
+              <li><Link class="hover:text-gray-200" href="/pages/nosotros">Nosotros</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Contacto</Link></li>
+              <li><Link class="hover:text-gray-200" href="#">Noticias</Link></li>
+
+
             </ul>
             <div class="hidden xl:flex space-x-5 items-center">
               <a class="hover:text-gray-200" href="#">

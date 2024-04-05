@@ -19,6 +19,7 @@ function ProductSection() {
     }
     return productList&&(
         <div className='px-10 md:px-20'>
+            <h2>NEW ARRIVALS</h2>
             <ProductList productList={productList}/>
         </div>
     )
