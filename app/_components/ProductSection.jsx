@@ -17,9 +17,9 @@ function ProductSection() {
             setProductList(resp.data.data);
         })
     }
-    return (
-        <div>
-            <ProductList/>
+    return productList&&(
+        <div className='px-10 md:px-20'>
+            <ProductList productList={productList}/>
         </div>
     )
 }
