@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Breadcrumb() {
+function Breadcrumb({path}) {
   return (
 
 <nav aria-label="Breadcrumb">
@@ -42,7 +42,7 @@ function Breadcrumb() {
     </li>
 
     <li>
-      <a href="#" className="block transition hover:text-gray-700"> Shirts </a>
+      <a href="/" className="block transition hover:text-gray-700"> {path?.split('/')[1]} </a>
     </li>
 
     <li className="rtl:rotate-180">
@@ -61,7 +61,7 @@ function Breadcrumb() {
     </li>
 
     <li>
-      <a href="#" className="block transition hover:text-gray-700"> Plain Tee </a>
+      <a href="#" className="block transition hover:text-gray-700"> {path?.split('/')[2]} </a>
     </li>
   </ol>
 </nav>

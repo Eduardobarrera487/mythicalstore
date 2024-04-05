@@ -17,6 +17,7 @@ function ProductSection() {
             setProductList(resp.data.data);
         })
     }
+
     return productList&&(
         <div className='px-10 md:px-20'>
             <h2>NEW ARRIVALS</h2>

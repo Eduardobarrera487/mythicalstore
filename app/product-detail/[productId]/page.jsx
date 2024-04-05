@@ -5,16 +5,19 @@ import ProductBanner from '../_components/ProductBanner';
 import ProductInfo from '../_components/ProductInfo';
 import ProductList from '@/app/_components/ProductList';
 import productList from '@/app/_components/ProductList';
+import { usePathname } from 'next/navigation';
 
 function ProductDetail(params) {
+
+  const path=usePathname();
 
   const [productDetail, setProductDetail]=useState();
   const [productList, setProductList]=useState([]);
 
   useEffect(()=>{
-    console.log("Product Id", params?.productId)
-    params?.productId&&getProductById_();
-  }, [params?.productId])
+    console.log("Product Id", path)
+    getProductById_();
+  }, [])
 
   const getProductById_=()=>{
     GlobalApi.getProductById(params?.productId).then(resp=>{
@@ -33,7 +36,7 @@ function ProductDetail(params) {
 
   return (
     <div className='p-5 py-20 px-10 md:px-28'>
-      <Breadcrumb/>
+      <Breadcrumb path={path}/>
       <div className='grid grid-cols-1 sm:grid-cols-2 mt-10 
       gap-5 sm:gap-5 justify-evenly'>
         <ProductBanner product={productDetail}/>
