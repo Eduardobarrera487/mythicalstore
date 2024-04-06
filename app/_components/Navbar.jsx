@@ -1,19 +1,51 @@
-"use Client"
-import React, { useEffect, useState } from 'react'
+"use client"
+import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import {useUser} from '@clerk/nextjs'
 import {ClerkProvider, UserButton, ShoppingCart} from "@clerk/nextjs"
+import { CartContext } from '../_contex/CartContext'
+import GlobalApi from '../_utils/GlobalApi'
+import Cart from './Cart'
 
 function navbar() {
 
   const {user}=useUser();
   const [isLogin,setIsLogin]=useState();
+  const [openCart,setOpenCart]=useState(false);
+  const {cart, setCart}=useContext(CartContext);
   console.log(window.location.href)
 
   useEffect(()=>{
     setIsLogin(window.location.href.toString().includes('sign-up'))
     setIsLogin(window.location.href.toString().includes('sign-in'))
   },[])
+
+  //esto se puede eliminar si los botones ShoppingCart
+  //y UserButton no funcionan o no lo lee el code
+  useEffect(()=>{
+    user&&getCartItem();
+  },[user])
+
+  //esto igual
+  useEffect(()=>{
+    openCart==false&&setOpenCart(true);
+  },[cart])
+
+  //esto no
+  const getCartItem=()=>{
+    GlobalApi.getUserCartItem(user.primaryEmailAddress.emailAddress).then(resp=>{
+      const result=resp.data.data.data
+
+      result&&result.forEach(prd => {
+        setCart(cart=>[...cart,
+          {
+            id:prd.id,
+            product:prd.attributes.products.data[0]
+          }
+        ])
+      });
+    })
+  }
 
 
   return !isLogin&&(
@@ -62,8 +94,12 @@ function navbar() {
             //si esto no llega a servir se puede cambiar con un h2 para texto
             <div className='flex items-center gap-5'>
               <UserButton/>
-              <h2 className='flex gap-1 cursor-pointer'><ShoppingCart/>(0)</h2>
+              <h2 className='flex gap-1 cursor-pointer'
+              onClick={()=>setOpenCart(!openCart)}>
+                <ShoppingCart/>({cart?.length})</h2>
             </div> }
+            
+            {setOpenCart&& <Cart/>}
 
 
             <div class="hidden xl:flex space-x-5 items-center">

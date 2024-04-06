@@ -21,9 +21,15 @@ const getProductByCategory=(category)=>axiosClient.get('/products?filters[catego
 
 const addToCart=(data)=>axiosClient.post('/carts',data)
 
+const getUserCartItem=(email)=>axiosClient.get('/carts?populate[products][populate][0]=banner&filters[email][$eq]'+email)
+
+const deleteCartItem=()=>axiosClient.delete('/carts'+id)
+
 export default{
     getLatestProducts,
     getProductById,
     getProductByCategory,
-    addToCart
+    addToCart,
+    getUserCartItem,
+    deleteCartItem
 }
