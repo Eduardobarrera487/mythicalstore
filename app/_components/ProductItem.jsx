@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProductItem(product) {
   return (
-    <link href={'product-detail/'+product.id}>
+    <Link href={'product-detail/'+product.id}>
         <div className='hover:border p-1 rounded-lg'>
             <Image src={product?.attributes?.banner?.data.attributes?.url}
             alt='banner'
@@ -23,7 +23,7 @@ function ProductItem(product) {
             <h2>${product.attributes?.pricing}</h2>
             </div>
         </div>
-    </link>
+    </Link>
   )
 }
 
