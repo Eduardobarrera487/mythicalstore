@@ -1,10 +1,22 @@
 import GlobalApi from '@/app/_utils/GlobalApi'
 import { data } from 'autoprefixer'
 import React from 'react'
+import {useUser} from '@clerk/nextjs'
+import { useRouter } from 'next/navigation';
 
 function ProductInfo({product}) {
 
+    const {user}=useUser();
+    const router=useRouter();
+
     const onAddToCartClick=()=>{
+        if(!user){
+            router.push('/sign-in')
+            return;
+        }
+        else{
+            
+        }
         const data={
             data:{
                 products:product?.id
