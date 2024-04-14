@@ -3,6 +3,7 @@ import Hero from "./_components/Hero";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/Navbar";
 import Hero2 from "./_components/Hero2";
+import ProductSection from "./_components/ProductSection";
 
 
 export default function Home() {
@@ -12,6 +13,10 @@ export default function Home() {
       <Hero2/>
       <Hero/>
       <Footer/>
+      <ProductSection/>
+      {/* Latest product Section */}
+      {/* Projecto Source code */}
+      {/* Icons Packs */}
     </div>
   )
 }
