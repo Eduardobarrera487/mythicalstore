@@ -11,8 +11,7 @@ export default function Home() {
     <div>
       <Navbar/>
       <Hero2/>
-      <Hero/>
-      <Footer/>
+      
       <ProductSection/>
       {/* Latest product Section */}
       {/* Projecto Source code */}

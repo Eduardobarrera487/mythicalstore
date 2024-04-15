@@ -19,10 +19,15 @@ function ProductSection() {
     }
 
     return productList&&(
-        <div className='px-10 md:px-20'>
-            <h2>NEW ARRIVALS</h2>
-            <ProductList productList={productList}/>
+        <>
+        <div className='px-10 md:px-20 flex text-center justify-center w-full h-full flex-col bg-zinc-800'>
+            <h2 className='my-16 text-white font-bold text-7xl'>NEW ARRIVALS</h2>
+            
+            
         </div>
+        <div className='px-20 py-24 bg-black'><ProductList productList={productList}/></div>
+        </>
+        
     )
 }
 
