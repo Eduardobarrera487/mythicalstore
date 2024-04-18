@@ -7,7 +7,7 @@ import { CartContext } from '../_contex/CartContext'
 import GlobalApi from '../_utils/GlobalApi'
 import Cart from './Cart'
 
-function navbar() {
+function Navbar() {
 
   const {user}=useUser();
   const [isLogin,setIsLogin]=useState();
@@ -149,4 +149,4 @@ function navbar() {
   )
 }
 
-export default navbar
+export default Navbar

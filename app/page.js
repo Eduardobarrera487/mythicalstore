@@ -16,6 +16,7 @@ export default function Home() {
       {/* Latest product Section */}
       {/* Projecto Source code */}
       {/* Icons Packs */}
+      <Footer/>
     </div>
   )
 }

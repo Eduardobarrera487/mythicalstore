@@ -1,9 +1,9 @@
-import GlobalApi from '@/app/_utils/GlobalApi'
+import GlobalApi from '../../_utils/GlobalApi';
 import { data } from 'autoprefixer'
 import React, { useContext } from 'react'
 import {useUser} from '@clerk/nextjs'
 import { useRouter } from 'next/navigation';
-import { CartContext } from '@/app/_contex/CartContext';
+import { CartContext } from '../../_contex/CartContext';
 
 function ProductInfo({product}) {
 
