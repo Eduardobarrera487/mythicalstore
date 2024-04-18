@@ -1,26 +1,23 @@
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
-function ProductItem(product) {
+function ProductItem({product}) {
   return (
     <Link href={'product-detail/'+product.id}>
-        <div className='hover:border p-1 rounded-lg'>
+        <div className='hover:border rounded-lg flex flex-col items-center'>
             <Image src={product?.attributes?.banner?.data.attributes?.url}
             alt='banner'
             width={400}
-            height={350}
-            className='rounded-t-lg
-            h-[190px] object-cover'
+            height={550}
+            className='rounded-t-lgh-[190px] object-cover'
             />
-            <div className='flex justify-between 
-            items-center bg-gray-50 p-3'>
-            <div className='flex justify-between
-            items-center bg-gray-50 p-3 rounded-b-lg '>
-                <h2 className='text-[14]
-                font-medium line-clamp-2 '>{product.attributes.title}</h2>
-                <h2 className='text-[10px]
-                text-gray-400'> {product?.attributes?.category}</h2>
-            </div>
-            <h2>${product.attributes?.pricing}</h2>
+            <div className='bg-gray-50 w-full'>
+              <div className=' bg-gray-50 p-3 rounded-b-lg '>
+                  <h2 className='text-[14] font-medium line-clamp-2 '>{product?.attributes?.title}</h2>
+                  <h2>${product.attributes?.pricing}</h2>
+              </div>
+              
             </div>
         </div>
     </Link>

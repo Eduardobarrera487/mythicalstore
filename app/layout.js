@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <navbar/>
         {children}
         </body>
-        <Footer/>
+        
     </html>
     </CartContext.Provider>
     </ClerkProvider>

@@ -15,8 +15,12 @@ const axiosClient=axios.create({
 
 const getLatestProducts=()=>axiosClient.get('/products?populate=*')
 
-const getProductById=(id)=>axiosClient.get('/products/'+id+'?populate=*')
-
+const getProductById=(productId)=>{
+    console.log("Product Id",productId)
+    const res = axiosClient.get('/products/'+productId+'?populate=*')
+    console.log(res)
+    return res
+}
 const getProductByCategory=(category)=>axiosClient.get('/products?filters[category][$eq]='+"&populate=*")
 
 const addToCart=(data)=>axiosClient.post('/carts',data)
