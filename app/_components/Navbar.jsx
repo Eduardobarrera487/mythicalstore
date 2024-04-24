@@ -70,7 +70,7 @@ function Navbar() {
           <div class="px-5 xl:px-12 py-6 flex w-full items-center">
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
 
-              <li><Link class="hover:text-gray-200" href="#">Inicio</Link></li>
+              <li><Link class="hover:text-gray-200" href="/">Inicio</Link></li>
               <li><Link class="hover:text-gray-200" href="#">Catalogo</Link></li>
               <li><Link class="hover:text-gray-200" href="/pages/nosotros">Nosotros</Link></li>
               <li><Link class="hover:text-gray-200" href="/pages/Contactos">Contacto</Link></li>
