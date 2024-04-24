@@ -1,10 +1,7 @@
-import { data } from "autoprefixer";
-import React from "react";
 const {default : axios}=require("axios");
-const { headers } = require("next/headers");
 
 const apiKey = process.env.NEXT_PUBLIC_REST_API_KEY
-const apiUrl= 'http://localhost:1337/api';
+const apiUrl= 'https://popular-birds-1caff13786.strapiapp.com/api/';
 
 const axiosClient=axios.create({
     baseURL:apiUrl,
@@ -23,17 +20,29 @@ const getProductById=(productId)=>{
 }
 const getProductByCategory=(category)=>axiosClient.get('/products?filters[category][$eq]='+"&populate=*")
 
+//Add to Cart Collection
 const addToCart=(data)=>axiosClient.post('/carts',data)
 
-const getUserCartItem=(email)=>axiosClient.get('/carts?populate[products][populate][0]=banner&filters[email][$eq]'+email)
+const getUserCartItems=(email)=>axiosClient.get('/carts?populate[products][populate][0]=banner&filters[email][$eq]='+email)
 
-const deleteCartItem=()=>axiosClient.delete('/carts'+id)
+//Delete Cart Item
+
+const deleteCartItem=(productId)=>{
+    console.log("Product Id",productId)
+    const res = axiosClient.delete('/carts/'+productId)
+    console.log(res)
+    return res
+}
+
+//Create Order
+const createOrder=(data)=>axiosClient.post('/orders',data)
 
 export default{
     getLatestProducts,
     getProductById,
     getProductByCategory,
     addToCart,
-    getUserCartItem,
-    deleteCartItem
+    getUserCartItems,
+    deleteCartItem,
+    createOrder
 }

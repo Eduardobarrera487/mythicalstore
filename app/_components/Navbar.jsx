@@ -1,41 +1,48 @@
 "use client"
 import React, { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
-import {useUser} from '@clerk/nextjs'
-import {ClerkProvider, UserButton, ShoppingCart} from "@clerk/nextjs"
-import { CartContext } from '../_contex/CartContext'
-import GlobalApi from '../_utils/GlobalApi'
-import Cart from './Cart'
+import {UserButton,useUser} from '@clerk/nextjs';
+import {ShoppingCart} from "lucide-react";
+import { CartContext } from '../_contex/CartContext';
+import GlobalApi from '../_utils/GlobalApi';
+import Cart from './Cart';
 
 function Navbar() {
 
-  const {user}=useUser();
+  const {user} = useUser();
   const [isLogin,setIsLogin]=useState();
   const [openCart,setOpenCart]=useState(false);
   const {cart, setCart}=useContext(CartContext);
-  console.log(window.location.href)
+  
+  
 
   useEffect(()=>{
-    setIsLogin(window.location.href.toString().includes('sign-up'))
-    setIsLogin(window.location.href.toString().includes('sign-in'))
+    setIsLogin(window.location.href.toString().includes('sign-in'));
+  
   },[])
-
-  //esto se puede eliminar si los botones ShoppingCart
-  //y UserButton no funcionan o no lo lee el code
+  //Añadi abigail
   useEffect(()=>{
     user&&getCartItem();
   },[user])
 
-  //esto igual
-  useEffect(()=>{
-    openCart==false&&setOpenCart(true);
-  },[cart])
+  //esto se puede eliminar si los botones ShoppingCart
+  //y UserButton no funcionan o no lo lee el code
+  // useEffect(()=>{
+  //   user&&getCartItem();
+  // },[user])
+
+  // //esto igual
+  // useEffect(()=>{
+  //   openCart==false&&setOpenCart(true);
+  // },[cart])
 
   //esto no
   const getCartItem=()=>{
-    GlobalApi.getUserCartItem(user.primaryEmailAddress.emailAddress).then(resp=>{
-      const result=resp.data.data.data
-
+    GlobalApi.getUserCartItems(user.primaryEmailAddress.emailAddress)
+    .then(resp=>{
+       //elimine un .data
+      const result=resp.data.data
+     
       result&&result.forEach(prd => {
         setCart(cart=>[...cart,
           {
@@ -91,16 +98,15 @@ function Navbar() {
               </a>
             </div>
             :
-            //si esto no llega a servir se puede cambiar con un h2 para texto
             <div className='flex items-center gap-5'>
-              <UserButton/>
               <h2 className='flex gap-1 cursor-pointer'
               onClick={()=>setOpenCart(!openCart)}>
                 <ShoppingCart/>({cart?.length})</h2>
+              <UserButton/>
             </div> }
             
-            {setOpenCart&& <Cart/>}
-
+            {openCart&&<Cart closeCart={()=>setOpenCart(false)}/>}
+            
 
             <div class="hidden xl:flex space-x-5 items-center">
               <a class="hover:text-gray-200" href="#">

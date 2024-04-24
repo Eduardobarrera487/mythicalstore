@@ -41,8 +41,8 @@ function ProductDetail(params) {
     <>
       <div className='p-5 py-20 px-10 md:px-28'>
       <Breadcrumb path={path}/>
-      <div className='grid grid-cols-1 sm:grid-cols-2 mt-10 
-      gap-5 sm:gap-5 justify-evenly'>
+      <div className='flex flex-col
+      sm:flex-row mt-10 gap-5 sm:gap-10'>
         <ProductBanner product={productDetail}/>
         <ProductInfo product={productDetail}/>
       </div>
