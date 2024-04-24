@@ -14,7 +14,7 @@ export default function Home() {
       
       <ProductSection/>
       {/* Latest product Section */}
-      {/* Projecto Source code */}
+      {/* Project Source code */}
       {/* Icons Packs */}
       <Footer/>
     </div>
