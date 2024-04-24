@@ -73,7 +73,7 @@ function Navbar() {
               <li><Link class="hover:text-gray-200" href="#">Inicio</Link></li>
               <li><Link class="hover:text-gray-200" href="#">Catalogo</Link></li>
               <li><Link class="hover:text-gray-200" href="/pages/nosotros">Nosotros</Link></li>
-              <li><Link class="hover:text-gray-200" href="#">Contacto</Link></li>
+              <li><Link class="hover:text-gray-200" href="/pages/Contactos">Contacto</Link></li>
               <li><Link class="hover:text-gray-200" href="#">Noticias</Link></li>
 
 
